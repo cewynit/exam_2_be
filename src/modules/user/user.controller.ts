@@ -1,14 +1,14 @@
 import { Body, Controller, Delete, Get, HttpException, Param, Post, Put, Query, UploadedFile, UseInterceptors } from "@nestjs/common";
-import { BaseController } from "src/common/base/base.controller";
+import { BaseController } from "../../common/base/base.controller";
 import { UserService } from "./user.service";
 import { GetUserListQuery, UpdateUserDto, createUserDto } from "./dto/user.interface";
-import { TrimBodyPipe } from "src/common/helper/pipe/trim.body.pipe";
-import { ErrorResponse, SuccessResponse } from "src/common/helper/response";
+import { TrimBodyPipe } from "../../common/helper/pipe/trim.body.pipe";
+import { ErrorResponse, SuccessResponse } from "../../common/helper/response";
 import mongoose from "mongoose";
-import { toObjectId } from "src/common/helper/commonFunction";
+import { toObjectId } from "../../common/helper/commonFunction";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { ApiBody, ApiOperation } from "@nestjs/swagger";
-import { HttpStatus } from "src/common/constants";
+import { HttpStatus } from "../../common/constants";
 
 
 @Controller('user')

@@ -23,8 +23,8 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { User } from 'src/database/schemas/user.schema';
-import { BaseService } from 'src/common/base/base.service';
+import { User } from '../../database/schemas/user.schema';
+import { BaseService } from '../../common/base/base.service';
 import { GetUserListQuery, UpdateUserDto, createUserDto } from './dto/user.interface';
 import { Types } from 'mongoose';
 import { UserRepository } from './repository/user.repository';

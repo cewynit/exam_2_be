@@ -1,6 +1,6 @@
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/auth.interface';
-import { BaseController } from 'src/common/base/base.controller';
+import { BaseController } from '../../common/base/base.controller';
 export declare class AuthController extends BaseController {
     private readonly authService;
     constructor(authService: AuthService);

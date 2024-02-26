@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Query, UseInterceptors, UploadedFile, Put, HttpException } from '@nestjs/common';
 import { ProductService } from './product.service';
-import { BaseController } from 'src/common/base/base.controller';
+import { BaseController } from '../../common/base/base.controller';
 import { GetProductListQuery, createProductDto, updateProductDto } from './dto/product.interface';
 import { ApiBody, ApiOperation } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { TrimBodyPipe } from 'src/common/helper/pipe/trim.body.pipe';
-import { ErrorResponse, SuccessResponse } from 'src/common/helper/response';
-import { toObjectId } from 'src/common/helper/commonFunction';
-import { HttpStatus } from 'src/common/constants';
+import { TrimBodyPipe } from '../../common/helper/pipe/trim.body.pipe';
+import { ErrorResponse, SuccessResponse } from '../../common/helper/response';
+import { toObjectId } from '../../common/helper/commonFunction';
+import { HttpStatus } from '../../common/constants';
 
 @Controller('product')
 export class ProductController extends BaseController{

@@ -1,8 +1,8 @@
 /// <reference types="multer" />
 import { ProductService } from './product.service';
-import { BaseController } from 'src/common/base/base.controller';
+import { BaseController } from '../../common/base/base.controller';
 import { GetProductListQuery, createProductDto, updateProductDto } from './dto/product.interface';
-import { ErrorResponse, SuccessResponse } from 'src/common/helper/response';
+import { ErrorResponse, SuccessResponse } from '../../common/helper/response';
 export declare class ProductController extends BaseController {
     private readonly productService;
     constructor(productService: ProductService);

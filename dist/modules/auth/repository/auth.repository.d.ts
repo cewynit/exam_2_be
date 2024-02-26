@@ -23,8 +23,8 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from "mongoose";
-import { BaseRepository } from "src/common/base/base.repository";
-import { User, UserDocument } from "src/database/schemas/user.schema";
+import { BaseRepository } from "../../../common/base/base.repository";
+import { User, UserDocument } from "../../../database/schemas/user.schema";
 export declare class AuthRepository extends BaseRepository<User> {
     private readonly userModel;
     constructor(userModel: Model<UserDocument>);

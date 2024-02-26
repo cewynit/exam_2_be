@@ -1,5 +1,5 @@
-import { BaseService } from 'src/common/base/base.service';
-import { User } from 'src/database/schemas/user.schema';
+import { BaseService } from '../../common/base/base.service';
+import { User } from '../../database/schemas/user.schema';
 import { AuthRepository } from './repository/auth.repository';
 import { JwtService } from '@nestjs/jwt';
 import { LoginDto } from './dto/auth.interface';

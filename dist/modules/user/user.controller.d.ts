@@ -1,8 +1,8 @@
 /// <reference types="multer" />
-import { BaseController } from "src/common/base/base.controller";
+import { BaseController } from "../../common/base/base.controller";
 import { UserService } from "./user.service";
 import { GetUserListQuery, UpdateUserDto, createUserDto } from "./dto/user.interface";
-import { ErrorResponse, SuccessResponse } from "src/common/helper/response";
+import { ErrorResponse, SuccessResponse } from "../../common/helper/response";
 export declare class UserController extends BaseController {
     private readonly UserService;
     constructor(UserService: UserService);

@@ -1,4 +1,4 @@
-import { CommonListQuery } from "src/common/interfaces";
+import { CommonListQuery } from "../../../common/interfaces";
 import { ProoductOrderBy } from "./product.contant";
 export declare class createProductDto {
     name?: string;

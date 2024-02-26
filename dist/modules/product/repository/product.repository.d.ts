@@ -23,8 +23,8 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import { Model } from "mongoose";
-import { BaseRepository } from "src/common/base/base.repository";
-import { Product, ProductDocument } from "src/database/schemas/product.schema";
+import { BaseRepository } from "../../../common/base/base.repository";
+import { Product, ProductDocument } from "../../../database/schemas/product.schema";
 import { GetProductListQuery } from "../dto/product.interface";
 export declare class ProductRepository extends BaseRepository<Product> {
     private readonly ProductModel;
