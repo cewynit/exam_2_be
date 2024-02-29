@@ -31,7 +31,7 @@ export declare class User extends MongoBaseSchema {
     password?: string;
     birthday?: string;
     phone?: string;
-    avatar?: string;
+    image?: string;
     role: string;
 }
 declare const UserSchema: import("mongoose").Schema<User, import("mongoose").Model<User, any, any, any, import("mongoose").Document<unknown, any, User> & User & Required<{

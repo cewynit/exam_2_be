@@ -32,7 +32,6 @@ export class ProductService extends BaseService<Product,ProductRepository>{
       throw error;
     }
   }
-
   async _createProduct(dto: createProductDto) {
     try {
       const product: SchemaCreateDocument<Product> = {

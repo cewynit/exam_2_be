@@ -14,7 +14,7 @@ export class createUserDto{
     birthday: string;
     phone: string;
     role?: string;
-    avatar?: string;
+    image?: string;
 }
 
 
@@ -25,7 +25,7 @@ export class UpdateUserDto{
     birthday?: string;
     phone?: string;
     role?: string;
-    avatar?: string;
+    image?: string;
 }
 
 export class GetUserListQuery extends CommonListQuery {

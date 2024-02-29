@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, Param, Post, Put, Query, UploadedFile, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpException, Param, Patch, Post, Put, Query, UploadedFile, UseInterceptors } from "@nestjs/common";
 import { BaseController } from "../../common/base/base.controller";
 import { UserService } from "./user.service";
 import { GetUserListQuery, UpdateUserDto, createUserDto } from "./dto/user.interface";
@@ -31,7 +31,7 @@ export class UserController extends BaseController{
     async createUser(@Body(new TrimBodyPipe()) dto: createUserDto,@UploadedFile() file: Express.Multer.File)
     {
         try{
-            file !=null ? dto.avatar=await this.UserService.uploadImageToCloudinary(file) : dto.avatar='';
+            file !=null ? dto.image=await this.UserService.uploadImageToCloudinary(file) : dto.image='';
             const result=await this.UserService._createUser(dto)
             return new SuccessResponse(result)
         }catch (error) {
@@ -54,11 +54,11 @@ export class UserController extends BaseController{
                 );
             }
             if(file !=null){
-                if(user.avatar!==''){
-                    this.UserService.deleteImageByUrl(user.avatar);
+                if(user.image!==''){
+                    this.UserService.deleteImageByUrl(user.image);
                 }
             }
-            file !=null ? dto.avatar=await this.UserService.uploadImageToCloudinary(file) : dto.avatar=user.avatar;
+            file !=null ? dto.image=await this.UserService.uploadImageToCloudinary(file) : dto.image=user.image;
             const result=await this.UserService._updateUser(toObjectId(id),dto);
             if(result)
                 return new SuccessResponse(result)
@@ -98,9 +98,9 @@ export class UserController extends BaseController{
                  "User not found"
             );
         }
-        console.log(user.avatar);
-        if(user.avatar !==''){
-            this.UserService.deleteImageByUrl(user.avatar);
+        console.log(user.image);
+        if(user.image !==''){
+            this.UserService.deleteImageByUrl(user.image);
         }
         const result=await this.UserService._deleteUser(toObjectId(id))
         return new SuccessResponse(result);

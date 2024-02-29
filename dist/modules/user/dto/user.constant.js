@@ -12,7 +12,7 @@ exports.UserAttributesForList = [
     'id',
     'createdAt',
     'updatedAt',
-    'avatar',
+    'image',
     'birthday',
     'email',
     'name',

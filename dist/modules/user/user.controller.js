@@ -33,7 +33,7 @@ let UserController = class UserController extends base_controller_1.BaseControll
     }
     async createUser(dto, file) {
         try {
-            file != null ? dto.avatar = await this.UserService.uploadImageToCloudinary(file) : dto.avatar = '';
+            file != null ? dto.image = await this.UserService.uploadImageToCloudinary(file) : dto.image = '';
             const result = await this.UserService._createUser(dto);
             return new response_1.SuccessResponse(result);
         }
@@ -48,11 +48,11 @@ let UserController = class UserController extends base_controller_1.BaseControll
                 return new response_1.ErrorResponse(constants_1.HttpStatus.ITEM_NOT_FOUND, "User not found");
             }
             if (file != null) {
-                if (user.avatar !== '') {
-                    this.UserService.deleteImageByUrl(user.avatar);
+                if (user.image !== '') {
+                    this.UserService.deleteImageByUrl(user.image);
                 }
             }
-            file != null ? dto.avatar = await this.UserService.uploadImageToCloudinary(file) : dto.avatar = user.avatar;
+            file != null ? dto.image = await this.UserService.uploadImageToCloudinary(file) : dto.image = user.image;
             const result = await this.UserService._updateUser((0, commonFunction_1.toObjectId)(id), dto);
             if (result)
                 return new response_1.SuccessResponse(result);
@@ -80,9 +80,9 @@ let UserController = class UserController extends base_controller_1.BaseControll
             if (!user) {
                 return new response_1.ErrorResponse(constants_1.HttpStatus.NOT_FOUND, "User not found");
             }
-            console.log(user.avatar);
-            if (user.avatar !== '') {
-                this.UserService.deleteImageByUrl(user.avatar);
+            console.log(user.image);
+            if (user.image !== '') {
+                this.UserService.deleteImageByUrl(user.image);
             }
             const result = await this.UserService._deleteUser((0, commonFunction_1.toObjectId)(id));
             return new response_1.SuccessResponse(result);

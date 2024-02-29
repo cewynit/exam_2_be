@@ -7,7 +7,7 @@ export declare class createUserDto {
     birthday: string;
     phone: string;
     role?: string;
-    avatar?: string;
+    image?: string;
 }
 export declare class UpdateUserDto {
     name?: string;
@@ -16,7 +16,7 @@ export declare class UpdateUserDto {
     birthday?: string;
     phone?: string;
     role?: string;
-    avatar?: string;
+    image?: string;
 }
 export declare class GetUserListQuery extends CommonListQuery {
     orderBy?: UserOrderBy;

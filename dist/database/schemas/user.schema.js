@@ -40,7 +40,7 @@ __decorate([
 __decorate([
     (0, mongoose_1.Prop)({ type: String }),
     __metadata("design:type", String)
-], User.prototype, "avatar", void 0);
+], User.prototype, "image", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ type: String, default: constants_1.RoleCollection.USERS }),
     __metadata("design:type", String)

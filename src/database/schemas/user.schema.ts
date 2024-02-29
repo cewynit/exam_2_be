@@ -30,7 +30,7 @@ export class User extends MongoBaseSchema {
     @Prop({ type: String })
     phone?: string;
     @Prop({ type: String })
-    avatar?: string;
+    image?: string;
     @Prop({ type: String, default: RoleCollection.USERS })
     role: string;
 }
