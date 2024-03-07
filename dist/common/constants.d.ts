@@ -63,6 +63,6 @@ export declare enum RoleCollection {
 }
 export declare const jwtConstants: {
     secret: string;
-    expiresIn: string;
-    refresh_expiresIn: string;
+    expiresIn: number;
+    refresh_expiresIn: number;
 };

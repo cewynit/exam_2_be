@@ -71,7 +71,7 @@ var RoleCollection;
 })(RoleCollection || (exports.RoleCollection = RoleCollection = {}));
 exports.jwtConstants = {
     secret: 'asskakskakskdasdiqweuqwiu1231829892asd',
-    expiresIn: '100',
-    refresh_expiresIn: '3600'
+    expiresIn: 100,
+    refresh_expiresIn: 3600
 };
 //# sourceMappingURL=constants.js.map

@@ -8,3 +8,7 @@ export class LoginDto{
     @IsNotEmpty({ message: 'Vui lòng nhập đầy đủ thông tin' })
     password: string;
 }
+
+export class RefreshTokenDto {
+    refresh_token: string;
+}

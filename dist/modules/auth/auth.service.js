@@ -40,7 +40,7 @@ let AuthService = class AuthService extends base_service_1.BaseService {
                 data: {
                     accessToken: accessToken,
                     expiresIn: constants_1.jwtConstants.expiresIn,
-                    refresh_token: refreshToken,
+                    refreshToken: refreshToken,
                     refresh_expiresIn: constants_1.jwtConstants.refresh_expiresIn,
                     profile: {
                         role: user.role,
@@ -50,6 +50,37 @@ let AuthService = class AuthService extends base_service_1.BaseService {
         }
         catch (error) {
             this.logger.error('Error in Login: ' + error);
+            throw error;
+        }
+    }
+    async refresh(dto) {
+        try {
+            const data = this.jwtService.verify(dto.refresh_token, {
+                secret: constants_1.jwtConstants.secret,
+            });
+            const payload = { sub: data._id, email: data.email, roles: data.role };
+            const accessToken = this.jwtService.sign(payload, {
+                secret: constants_1.jwtConstants.secret,
+                expiresIn: constants_1.jwtConstants.expiresIn,
+            });
+            const refreshToken = this.jwtService.sign(payload, {
+                secret: constants_1.jwtConstants.secret,
+                expiresIn: constants_1.jwtConstants.refresh_expiresIn,
+            });
+            return {
+                data: {
+                    accessToken: accessToken,
+                    expiresIn: constants_1.jwtConstants.expiresIn,
+                    refreshToken: refreshToken,
+                    refresh_expiresIn: constants_1.jwtConstants.refresh_expiresIn,
+                    profile: {
+                        role: data.role,
+                    }
+                }
+            };
+        }
+        catch (error) {
+            this.logger.error('Error in refresh: ' + error);
             throw error;
         }
     }
