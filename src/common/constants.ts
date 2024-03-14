@@ -72,6 +72,6 @@ export enum RoleCollection {
 }
 export const jwtConstants = {
     secret: 'asskakskakskdasdiqweuqwiu1231829892asd',
-    expiresIn:100,
-    refresh_expiresIn: 3600
+    expiresIn:300,
+    refresh_expiresIn: 1800
 };
